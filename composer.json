@@ -1,0 +1,33 @@
+{
+    "name": "devanych/yii2-cart",
+    "description": "Shopping cart for Yii2",
+    "keywords": ["yii2-cart", "yii2-shopping-cart", "yii2-extension", "yii2"],
+    "type": "yii2-extension",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Evgeniy Zyubin",
+            "email": "info@zyubin.com",
+            "homepage": "https://zyubin.ru"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/devanych/yii2-cart/issues?state=open",
+        "source": "https://github.com/devanych/yii2-cart"
+    },
+    "require": {
+        "php": ">=5.6",
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "devanych\\cart\\": ""
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}
