@@ -177,6 +177,4 @@ return [
 ```
 ## Useful links
 
-Article with a detailed description in Russian language:
-
-<https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>
+Article with a detailed description in Russian language: <https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>
