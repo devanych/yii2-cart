@@ -66,9 +66,9 @@ Setting up the ```params``` array:
 
 * ```productClass``` - Product class is an ActiveRecord model.
 
-* ```productFieldId``` - Name of the product model ```id``` field
+* ```productFieldId``` - Name of the product model ```id``` field.
 
-* ```productFieldPrice``` - Name of the product model ```price``` field
+* ```productFieldPrice``` - Name of the product model ```price``` field.
 
 ## Usage
 
@@ -175,3 +175,8 @@ return [
     //...
 ];
 ```
+## Useful links
+
+Article with a detailed description in Russian language:
+
+<https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>
