@@ -1,13 +1,12 @@
 <?php
 
-namespace devanych\cart\tests\unit;
+namespace devanych\cart\tests;
 
 use devanych\cart\calculators\SimpleCalculator;
-use devanych\cart\tests\dummy\DummyProduct;
+use devanych\cart\tests\data\DummyProduct;
 use devanych\cart\CartItem;
-use Codeception\Test\Unit;
 
-class SimpleCalculatorTest extends Unit
+class SimpleCalculatorTest extends TestCase
 {
     private $params = [
         'productFieldId' => 'id',

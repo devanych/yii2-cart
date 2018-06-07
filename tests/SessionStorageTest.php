@@ -1,12 +1,11 @@
 <?php
 
-namespace devanych\cart\tests\unit;
+namespace devanych\cart\tests;
 
-use devanych\cart\tests\dummy\DummyProduct;
+use devanych\cart\tests\data\DummyProduct;
 use devanych\cart\CartItem;
-use Codeception\Test\Unit;
 
-class SessionStorageTest extends Unit
+class SessionStorageTest extends TestCase
 {
     private $params = [
         'key' => 'cartTest',

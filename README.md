@@ -153,28 +153,6 @@ $product = $item->getProduct();
 echo $product->name;
 ```
 
-## Testing
-
-For testing, the `codeception` included in the Yii2 framework is used. In the configuration file `codeception.yml` in the root folder of the extension `@vendor/devanych/yii2-cart` set path to the configuration file `test.php`. By default, this is the path to the file `/config/test.php` [yii2-app-basic](https://github.com/yiisoft/yii2-app-basic).
-
-Configure the `cart` component in the `test.php`
-
-```php
-return [
-    //...
-    'components' => [
-        //...
-        'cart' => [
-            'class' => 'devanych\cart\Cart',
-            'storageClass' => 'devanych\cart\tests\dummy\DummyStorage',
-            'params' => [
-                'productClass' => 'devanych\cart\tests\dummy\DummyProduct',
-            ],
-        ],
-    ]
-    //...
-];
-```
 ## Useful links
 
 Article with a detailed description in Russian language: <https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>

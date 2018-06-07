@@ -1,13 +1,12 @@
 <?php
 
-namespace devanych\cart\tests\unit;
+namespace devanych\cart\tests;
 
-use devanych\cart\tests\dummy\DummyProduct;
-use devanych\cart\tests\dummy\DummyStorage;
-use Codeception\Test\Unit;
+use devanych\cart\tests\data\DummyProduct;
+use devanych\cart\tests\data\DummyStorage;
 use devanych\cart\Cart;
 
-class CartTest extends Unit
+class CartTest extends TestCase
 {
     /**
      * @var Cart
@@ -20,14 +19,14 @@ class CartTest extends Unit
 
     public function setUp()
     {
+        parent::setUp();
         $this->cart = \Yii::$app->cart;
         $this->product = new DummyProduct();
-        parent::setUp();
     }
 
     public function testCreate()
     {
-        $this->assertEquals([], $this->cart->getItems());
+        $this->assertEquals([], \Yii::$app->cart->getItems());
     }
 
     public function testAdd()

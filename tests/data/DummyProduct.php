@@ -1,6 +1,6 @@
 <?php
 
-namespace devanych\cart\tests\dummy;
+namespace devanych\cart\tests\data;
 /**
  * Class Product
  *

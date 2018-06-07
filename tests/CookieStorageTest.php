@@ -1,14 +1,13 @@
 <?php
 
-namespace devanych\cart\tests\unit;
+namespace devanych\cart\tests;
 
-use devanych\cart\tests\dummy\DummyProduct;
+use devanych\cart\tests\data\DummyProduct;
 use devanych\cart\CartItem;
-use Codeception\Test\Unit;
 use yii\helpers\Json;
 use yii\web\Cookie;
 
-class CookieStorageTest extends Unit
+class CookieStorageTest extends TestCase
 {
     private $cookie;
 
