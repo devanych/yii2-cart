@@ -18,11 +18,11 @@ or add
 devanych/yii2-cart: "*"
 ```
 
-to the ```require``` section of your ```composer.json``` file.
+to the `require` section of your `composer.json` file.
 
 ## Configuration
 
-Configure the ```cart``` component (default values are shown):
+Configure the `cart` component (default values are shown):
 
 ```php
 return [
@@ -46,33 +46,33 @@ return [
 ];
 ```
 
-In addition to ```devanych\cart\storage\SessionStorage```, there is also ```devanych\cart\storage\CookieStorage``` and ```devanych\cart\storage\DbSessionStorage```. It is possible to create your own storage, you need to implement the interface ```devanych\cart\storage\StorageInterface```.
+In addition to `devanych\cart\storage\SessionStorage`, there is also `devanych\cart\storage\CookieStorage` and `devanych\cart\storage\DbSessionStorage`. It is possible to create your own storage, you need to implement the interface `devanych\cart\storage\StorageInterface`.
 
-```DbSessionStorage``` uses ```SessionStorage``` for unauthorized users and database for authorized.
+`DbSessionStorage` uses `SessionStorage` for unauthorized users and database for authorized.
 
-> If you use the ```devanych\cart\storage\DbSessionStorage``` as ```storageClass``` then you need to apply the following migration:
+> If you use the `devanych\cart\storage\DbSessionStorage` as `storageClass` then you need to apply the following migration:
 
-```
+```php
 php yii migrate --migrationPath=@vendor/devanych/yii2-cart/migrations
 ```
 
-```devanych\cart\calculators\SimpleCalculator``` produces the usual calculation of the total cost and total quantity of items in the cart. If you need to make a calculation with discounts or something else, you can create your own calculator by implementing the interface ```devanych\cart\calculators\CalculatorInterface```.
+`devanych\cart\calculators\SimpleCalculator` produces the usual calculation of the total cost and total quantity of items in the cart. If you need to make a calculation with discounts or something else, you can create your own calculator by implementing the interface `devanych\cart\calculators\CalculatorInterface`.
 
-Setting up the ```params``` array: 
+Setting up the `params` array: 
 
-* ```key``` - For Session and Cookie.
+* `key` - For Session and Cookie.
 
-* ```expire``` - Cookie life time.
+* `expire` - Cookie life time.
 
-* ```productClass``` - Product class is an ActiveRecord model.
+* `productClass` - Product class is an ActiveRecord model.
 
-* ```productFieldId``` - Name of the product model ```id``` field.
+* `productFieldId` - Name of the product model `id` field.
 
-* ```productFieldPrice``` - Name of the product model ```price``` field.
+* `productFieldPrice` - Name of the product model `price` field.
 
 ## Usage
 
-You can get the shopping cart component anywhere in the app using ```Yii::$app->cart```.
+You can get the shopping cart component anywhere in the app using `Yii::$app->cart`.
 
 Using cart:
 
@@ -145,7 +145,7 @@ $item->getQuantity();
 $item->setQuantity($quantity);
 ```
 
-> By using method ```getProduct()```, you have access to all the properties and methods of the product.
+> By using method `getProduct()`, you have access to all the properties and methods of the product.
 
 ```php
 $product = $item->getProduct();
@@ -155,9 +155,9 @@ echo $product->name;
 
 ## Testing
 
-For testing, the ```codeception``` included in the Yii2 framework is used. In the configuration file ```codeception.yml``` in the root folder of the extension ```@vendor/devanych/yii2-cart``` set path to the configuration file ```test.php```. By default, this is the path to the file ```/config/test.php``` [yii2-app-basic](https://github.com/yiisoft/yii2-app-basic).
+For testing, the `codeception` included in the Yii2 framework is used. In the configuration file `codeception.yml` in the root folder of the extension `@vendor/devanych/yii2-cart` set path to the configuration file `test.php`. By default, this is the path to the file `/config/test.php` [yii2-app-basic](https://github.com/yiisoft/yii2-app-basic).
 
-Configure the ```cart``` component in the ```test.php```
+Configure the `cart` component in the `test.php`
 
 ```php
 return [
