@@ -55,6 +55,8 @@ class Cart extends Component
     {
         parent::init();
 
+        $this->params = array_merge($this->defaultParams, $this->params);
+
         if (!class_exists($this->params['productClass'])) {
             throw new InvalidConfigException('productClass `' . $this->params['productClass'] . '` not found');
         }
@@ -65,7 +67,6 @@ class Cart extends Component
             throw new InvalidConfigException('calculatorClass `' . $this->calculatorClass . '` not found');
         }
 
-        $this->params = array_merge($this->defaultParams, $this->params);
         $this->storage = new $this->storageClass($this->params);
         $this->calculator = new $this->calculatorClass();
     }
