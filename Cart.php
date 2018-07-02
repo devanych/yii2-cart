@@ -2,10 +2,10 @@
 
 namespace devanych\cart;
 
-use yii\base\Component;
+use yii\base\BaseObject;
 use yii\base\InvalidConfigException;
 
-class Cart extends Component
+class Cart extends BaseObject
 {
     /**
      * @var string $storageClass
