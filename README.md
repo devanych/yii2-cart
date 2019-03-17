@@ -152,7 +152,43 @@ $product = $item->getProduct();
 
 echo $product->name;
 ```
+## Supporting  Multiple carts to same website
+Add this to your config file :
 
-## Useful links
+'cart' => [
+            'class' => 'devanych\cart\Cart',
+            'storageClass' => 'devanych\cart\storage\SessionStorage',
+            'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+            'params' => [
+                'key' => 'cart',
+                'expire' => 604800,
+                'productClass' => 'app\models\Testitem',
+                'productFieldId' => 'code',
+                'productFieldPrice' => 'price',
+            ],
+        ],'itemcart' => [
+            'class' => 'devanych\cart\Cart',
+            'storageClass' => 'devanych\cart\storage\SessionStorage',
+            'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+            'params' => [
+                'key' => 'itemcart',
+                'expire' => 604800,
+                'productClass' => 'app\models\Item',
+                'productFieldId' => 'id',
+                'productFieldPrice' => 'rate',
+            ],
+        ],'salecart' => [
+            'class' => 'devanych\cart\Cart',
+            'storageClass' => 'devanych\cart\storage\SessionStorage',
+            'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+            'params' => [
+                'key' => 'salecart',
+                'expire' => 604800,
+                'productClass' => 'app\models\Item',
+                'productFieldId' => 'id',
+                'productFieldPrice' => 'price',
+            ],
+        ]
 
-Article with a detailed description in Russian language: <https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>
+
+
