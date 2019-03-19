@@ -70,6 +70,37 @@ Setting up the `params` array:
 
 * `productFieldPrice` - Name of the product model `price` field.
 
+#### Supporting multiple shopping carts to same website:
+
+```php
+//...
+'cart' => [
+    'class' => 'devanych\cart\Cart',
+    'storageClass' => 'devanych\cart\storage\SessionStorage',
+    'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+    'params' => [
+        'key' => 'cart',
+        'expire' => 604800,
+        'productClass' => 'app\model\Product',
+        'productFieldId' => 'id',
+        'productFieldPrice' => 'price',
+    ],
+],
+'sale_cart' => [
+    'class' => 'devanych\cart\Cart',
+    'storageClass' => 'devanych\cart\storage\SessionStorage',
+    'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+    'params' => [
+        'key' => 'sale_cart',
+        'expire' => 604800,
+        'productClass' => 'app\models\Product',
+        'productFieldId' => 'id',
+        'productFieldPrice' => 'price',
+    ],
+],
+//...
+```
+
 ## Usage
 
 You can get the shopping cart component anywhere in the app using `Yii::$app->cart`.
@@ -114,7 +145,7 @@ $cart->getTotalCost();
 $cart->getTotalCount();
 ```
 
-Using cart items:
+#### Using cart items:
 
 ```php
 // Product is an AR model
