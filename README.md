@@ -2,6 +2,8 @@
 
 This extension adds shopping cart for Yii framework 2.0
 
+Guide with a detailed description in Russian language [here](https://github.com/devanych/yii2-cart/blob/master/docs/guide-ru.md).
+
 ## Installation
 
 The preferred way to install this extension is through [Composer](https://getcomposer.org/download/)
@@ -183,7 +185,3 @@ $product = $item->getProduct();
 
 echo $product->name;
 ```
-
-## Useful links
-
-Article with a detailed description in Russian language: <https://zyubin.ru/frameworks/yii/rasshirenie-korzina-dlya-yii2.html>
