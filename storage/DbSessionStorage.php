@@ -2,6 +2,7 @@
 
 namespace devanych\cart\storage;
 
+use yii\helpers\ArrayHelper;
 use devanych\cart\CartItem;
 use yii\db\Query;
 use Yii;
@@ -74,7 +75,9 @@ class DbSessionStorage implements StorageInterface
     private function moveItems()
     {
         if ($sessionItems = $this->sessionStorage->load()) {
-            $items = array_merge($this->loadDb(), $sessionItems);
+            $items = ArrayHelper::index(ArrayHelper::merge($this->loadDb(), $sessionItems), function (CartItem $item) {
+                return $item->getId();
+            });
             $this->saveDb($items);
             $this->sessionStorage->save([]);
         }
