@@ -88,12 +88,12 @@ Setting up the `params` array:
         'productFieldPrice' => 'price',
     ],
 ],
-'sale_cart' => [
+'favorite' => [
     'class' => 'devanych\cart\Cart',
-    'storageClass' => 'devanych\cart\storage\SessionStorage',
+    'storageClass' => 'devanych\cart\storage\DbSessionStorage',
     'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
     'params' => [
-        'key' => 'sale_cart',
+        'key' => 'favorite',
         'expire' => 604800,
         'productClass' => 'app\models\Product',
         'productFieldId' => 'id',

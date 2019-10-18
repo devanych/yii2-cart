@@ -6,7 +6,7 @@
 
 Расширение «[devanych/yii2-cart](https://github.com/devanych/yii2-cart)» решает эти проблемы и позволяет очень легко менять хранилища и калькуляторы, дает возможность подключать собственные решения.
 
-The preferred way to install this extension is through «[Composer](https://getcomposer.org/download/)»:
+Установить расширение через «[Composer](https://getcomposer.org/download/)»:
 
 ```
 php composer.phar require devanych/yii2-cart "*"
@@ -65,6 +65,37 @@ php yii migrate --migrationPath=@vendor/devanych/yii2-cart/migrations
 * `productClass` — класс товара ActiveRecord модели (по умолчанию — `app\model\Product`);
 * `productFieldId` — первичный ключ модели товара (по умолчанию — `id`);
 * `productFieldId` — свойство (поле в БД) цены модели товара (по умолчанию — `price`).
+
+Вы можете использовать несколько компонентов корзины, например, хранить еще избранные товары:
+
+```php
+//...
+'cart' => [
+    'class' => 'devanych\cart\Cart',
+    'storageClass' => 'devanych\cart\storage\SessionStorage',
+    'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+    'params' => [
+        'key' => 'cart',
+        'expire' => 604800,
+        'productClass' => 'app\model\Product',
+        'productFieldId' => 'id',
+        'productFieldPrice' => 'price',
+    ],
+],
+'favorite' => [
+    'class' => 'devanych\cart\Cart',
+    'storageClass' => 'devanych\cart\storage\DbSessionStorage',
+    'calculatorClass' => 'devanych\cart\calculators\SimpleCalculator',
+    'params' => [
+        'key' => 'favorite',
+        'expire' => 604800,
+        'productClass' => 'app\models\Product',
+        'productFieldId' => 'id',
+        'productFieldPrice' => 'price',
+    ],
+],
+//...
+```
 
 ## Использование
 
